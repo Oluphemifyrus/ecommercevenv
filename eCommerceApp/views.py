@@ -22,7 +22,7 @@ def product_list(request):
     return render(request, 'eCommerceApp/products.html', context)
 
 def product_detail(request, id):
-    product =  get_object_or_404(Product, pk=id)
+    product =  get_object_or_404(Product, pk=id) 
     cart_product_form = CartAddProductForm()
     context = {
         'product' : product,

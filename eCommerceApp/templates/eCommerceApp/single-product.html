@@ -80,6 +80,7 @@
               <p style="display:inline">
                 Units left<h6>{{ product.availableUnit }}</h6>
               </p>
+              {% comment %}
               <form action="" method="get">
                 <label for="quantity">Quantity:</label>
                 <input name="quantity" type="quantity" class="quantity-text" id="quantity" 
@@ -88,7 +89,13 @@
                     value="1">
                 <input type="submit" class="button" value="Order Now!">
               </form>
+              {% endcomment %}
               <div class="down-content">
+                <form action="{% url "cart:cart_add" product.id %}" method="post">
+                  {{ cart_product_form}}
+                  {% csrf_token %}
+                  <input type="submit" value="Add to Cart">
+                </form>
               </div>
             </div>
           </div>
@@ -97,12 +104,6 @@
     </div>
     
     <!-- Single Page Ends Here -->
-
-    <form action="{% url "cart:cart_add" product.id %}" method="post">
-      {{ cart_product_form}}
-      {% csrf_token %}
-      <input type="submit" value="Add to Cart">
-    </form>
 
 
 
