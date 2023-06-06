@@ -132,3 +132,9 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 
 CART_SESSION_ID = 'cart'
+
+
+
+PAYSTACK_TEST_SECRET_KEY = 'sk_test_8db48e34dd301ce9cb6eeb84163ad00f52aac468'
+PAYSTACT_TEST_PUBLIC_KEY = 'pk_test_3640cd3c7c855782efcf9cf317a10b73c3e3deec'
+PAYSTACK_INITIALIZE_PAYMENT_URL = 'https://api.paystack.co/transaction/initialize'

@@ -6,12 +6,12 @@ from eCommerceApp.models import Product
 class Customer(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
-    email = EmailField()
+    email = models.EmailField()
     address = models.CharField(max_length=250)
     postal_code = models.CharField(max_length=6)
     city = models.CharField(max_length=10)
     created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(aut0_now=True)
+    updated = models.DateTimeField(auto_now=True)
 
     def __str__ (self):
         return self.email
