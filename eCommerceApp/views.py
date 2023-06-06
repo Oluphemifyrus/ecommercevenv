@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Product
+from .models import Product 
+from cart.forms import CartAddProductForm
 
 # Create your views here.
 
@@ -15,7 +16,7 @@ def index(request):
 def product_list(request):
     products = Product.objects.all()
     context = {
-        'products' : products,
+        'products' : products
     }
 
     return render(request, 'eCommerceApp/products.html', context)
@@ -25,7 +26,7 @@ def product_detail(request, id):
     cart_product_form = CartAddProductForm()
     context = {
         'product' : product,
-        'cart_product_form' :cart_product_form,
+        'cart_product_form' : cart_product_form,
     }
 
     return render(request, 'eCommerceApp/single-product.html', context)
